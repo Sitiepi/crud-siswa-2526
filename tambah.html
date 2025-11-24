@@ -7,16 +7,16 @@
   <title>tambah</title>
   <link rel="stylesheet" href="style.css">
 </head>
-  
+
 <body>
   <div class="container">
-      <h1>Form tambah siswa</h1>
-      <form>
+    <h1>Form tambah siswa</h1>
+    <form id="formTambah">
       <label> NIS</label>
-      <input type="text"  id="nis" />
+      <input type="text" id="nis" />
       
       <label> Nama</label>
-      <input type="text" id="nama"/>
+      <input type="text" id="nama" />
       
       <label>Kelas</label>
       <select name="kelas" id="kelas">
@@ -25,10 +25,25 @@
         <option value="XII">XII</option>
         
       </select>
-      <button id="tombol">simpan</button>
+      <button id="tombol" type="submit">simpan</button>
       <a href="daftar.html">Daftar Siswa</a>
-      </form>
+    </form>
   </div>
+  
+  <script type="module">
+    import { tambahDataSiswa } from './main.js'
+    
+    //mengirimkan data siswa ke form
+    const formTambah = document.getElementById('formTambah')
+    
+    //event ketika form disumbit
+    formTambah.addEventListener('submit', function(e) {
+      //pencegah reload halaman
+      e.preventDefault()
+      
+      tambahDataSiswa()
+    })
+  </script>
 </body>
 
 </html>
