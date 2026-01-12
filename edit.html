@@ -46,6 +46,7 @@
     
     document.getElementById('nis').value = siswa.nis
     document.getElementById('nama').value = siswa.nama
+    document.getElementById('kelas').value = siswa.kelas
     
     const formUbah = document.getElementById('formUbah')
     
@@ -56,7 +57,7 @@
       const nama = document.getElementById('nama').value
       const kelas = document.getElementById('kelas').value
       
-      
+      ubahDataSiswa(idSiswa,nis,nama,kelas)
       
     })
   </script>
